@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    background-image: url(img/coffee-bg.png);
+    padding: cover;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+tbody{
+    font-family: 'Italianno', cursive;
+    color: rgba(169, 169, 169, 0.705);
+}
+h1.text-center{
+    font-family: 'Dancing Script', cursive;
+    color:hwb(32 13% 32% / 0.74);
+}
