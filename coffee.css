@@ -26,3 +26,20 @@ h1.text-center{
     height: 600px; /* or any value */
     overflow-y: scroll;
 } 
+.btn{
+    color: rgb(165, 138, 108);
+}
+.form-control{
+    background: transparent;
+    border: none;
+}
+.input-group-text{
+    background: transparent;
+    border: none;
+    color:bisque;
+}
+.form-select{
+    background: transparent;
+    border: none;
+    color: grey;
+}
