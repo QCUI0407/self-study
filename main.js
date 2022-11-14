@@ -18,7 +18,7 @@ let coffees = [
 
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<td style="color:#eeebebfd; font-size:70px;">' + coffee.name + '</td>';
+    html += '<td style="color:#eeebebfd; font-size:65px;">' + coffee.name + '</td>';
     html += '<td style="color:#a9a9a9b4; font-size:30px;">' + "-" +coffee.roast + '</td>';
     html += '</tr>';
 

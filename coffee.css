@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     height: 100%;
-    background-image: url(img/coffee-bg.png);
+    background-image: url(img/coffee.jpg);
     padding: cover;
     background-size:100% 100%;
     background-repeat:no-repeat;
@@ -41,5 +41,8 @@ h1.text-center{
 .form-select{
     background: transparent;
     border: none;
-    color: grey;
+    color:grey;
+}
+h1{
+    font-size :60px;
 }
