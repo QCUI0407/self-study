@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     height: 100%;
-    background-image: url(img/coffee.jpg);
+    background-image: url(coffee.png);
     padding: cover;
     background-size:100% 100%;
     background-repeat:no-repeat;
@@ -25,7 +25,7 @@ h1.text-center{
 .scrollable{
     height: 600px; /* or any value */
     overflow-y: scroll;
-} 
+}
 .btn{
     color: rgb(165, 138, 108);
 }

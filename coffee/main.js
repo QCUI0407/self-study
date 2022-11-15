@@ -54,7 +54,11 @@ function updateTypeCoffees(){
     let filteredCoffees = [];
     let roastFilterCoffees =[];
     coffees.forEach(function (coffee){
-        if (coffee.roast === selectedRoast){
+        if (coffee.roast.toLowerCase() === selectedRoast){
+            console.log(coffees)
+            roastFilterCoffees.push(coffee);
+        }
+        if("all"=== selectedRoast){
             roastFilterCoffees.push(coffee);
         }
     })
@@ -76,18 +80,29 @@ function addNewCoffee(e){
     const coffeeName = typeLetter.charAt(0).toUpperCase() + typeLetter.slice(1);
     // console.log(typeLetter)
     let coffee = {name:coffeeName, roast:selectedRoast};
+    // coffees.push(coffee);
+    coffees.forEach(function (coffee){
+        if(coffee.roast === selectedRoast && typeLetter === coffee.name.toLowerCase()){
+            alert("has it");
+            coffees.pop();
+        }
+    })
     coffees.push(coffee);
     localStorage.setItem('newCoffeeList', JSON.stringify(coffees));
-    tbody.innerHTML = renderCoffees(coffees)
-    location.reload()
+    tbody.innerHTML = renderCoffees(coffees);
+    //location.reload will clear cache and rid your local storage
+    // location.reload()
 }
 // remove coffee
-function reomveCoffee(e){
+
+function removeCoffee(e){
     e.preventDefault();
     let selectedRoast = removeSelection.value.toLowerCase();
     let typeLetter = removeType.value.toLowerCase();
     coffees.forEach(function(coffee,i){
-        if(coffee.roast === selectedRoast && coffee.name === typeLetter){
+        console.log("loop running")
+        if(coffee.roast.toLowerCase() === selectedRoast && coffee.name.toLowerCase() === typeLetter){
+            console.log(coffee)
             coffees.splice(i,1);
         }
     })
@@ -116,7 +131,7 @@ roastSelection.addEventListener('change', updateCoffees);
 newCoffee.addEventListener('keyup',updateCoffees);
 searchCoffee.addEventListener('keyup',updateTypeCoffees);
 submitNewCoffee.addEventListener('click', addNewCoffee)
-removeCoffeeBtn.addEventListener('click', reomveCoffee)
+removeCoffeeBtn.addEventListener('click', removeCoffee)
 
 if(newCoffees === null){
     tbody.innerHTML = renderCoffees(coffees)
