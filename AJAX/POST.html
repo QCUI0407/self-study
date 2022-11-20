@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST Request</title>
+    <style>
+    #result{
+        width: 200px;
+        height: 100px;
+        border: solid 1px red;
+    }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.getElementById('result');
+        result.addEventListener('mouseover',function(){
+            // 1.创建对象
+            const xhr = new XMLHttpRequest();
+            // 2.初始化 设置类型与URl
+            xhr.open('POST', 'http://127.0.0.1:8000/server');
+            //设置请求头
+            //xhr.setRequestHeader('设置请求体内容的类型'，'查询参数字符串类型（固定写法）')
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            // 自定义头信息,会报错，需要在后端设定，一般后端人员去解决
+            xhr.setRequestHeader('self-seting','value')
+            // 3.发送 POST 可以发送参数, 
+            xhr.send('a=100&b=200&c=300');//常见的书写格式
+            //xhr.send('123131321312313');//参数可以随意书写，只要服务器可以解析.
+            // 4.事件绑定
+            xhr.onreadystatechange = function(){
+                // 判断
+                if(xhr.readyState === 4){
+                    if(xhr.status >=200 && xhr.status<300){
+                        // 处理服务端返回的结果
+                        result.innerHTML = xhr.response;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
