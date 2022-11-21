@@ -47,6 +47,7 @@ app.all('/json-server',(rquest,response)=>{
     // 设置响应体
     response.send(str);
 });
+
 // 延迟响应
 app.get('/delay',(rquest,response)=>{
     // 设置响应头， 设置允许跨域（Access-Control-Allow-Origin）
@@ -55,6 +56,17 @@ app.get('/delay',(rquest,response)=>{
             // 设置响应体
         response.send('Delay!');
     }, 3000)
+});
+
+//jQuery
+app.all('/jQuery',(rquest,response)=>{
+    // 设置响应头， 设置允许跨域（Access-Control-Allow-Origin）
+    response.setHeader('Access-Control-Allow-Origin','*');
+    response.setHeader('Access-Control-Allow-Headers','*');
+    const data = {
+        name: "jQuery from JSON"
+    }
+    response.send(JSON.stringify(data));
 });
 
 // 4.监听端口启动服务

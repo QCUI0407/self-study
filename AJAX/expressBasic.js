@@ -17,3 +17,6 @@ app.get('/',(rquest,response)=>{
 app.listen (8000,()=>{
     console.log("服务器已启动， 8000 端口监听中...");
 })
+//基于Node.js npm 自动更新服务器，不用断开连接，便于更改服务端代码
+//npm install -g nodemon
+//指令从node 文件名 --> nodemon 文件名
