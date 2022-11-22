@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+    <title> favorite restaurant</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 15em;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .marker {
+            background-image: url('icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+    <script src="../js/keys.js"></script>
+</head>
+
+<body>
+    <h1> Favorite Restaurant</h1>
+    <div>
+        <label for="zoom">Choose you zoom level</label>
+        <select name="zoom" id="zoom">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select><br>
+        <!-- input -->
+        <form>
+            <label for="address">Address</label><br>
+            <input type="text" id="address" name="address"><br>
+            <button id="search">search</button>
+        </form>
+    </div>
+    <button id="'hideM">hide marker</button>
+    <div id='map'></div><script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="mapbox.js"></script>
+
+</body>
+
+</html>
