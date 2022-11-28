@@ -1,4 +1,5 @@
 "use strict";
+// const { response } = require("express");
 
 /***
  * geocode is a method to search for coordinates based on a physical address and return
@@ -17,18 +18,23 @@ function geocode(search, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
     return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-        .then(function(res) {
+        .then(function (res) {
             return res.json();
             // to get all the data from the request, comment out the following three lines...
-        }).then(function(data) {
+        }).then(function (data) {
             return data.features[0].center;
         });
 }
 function centerOnLocationName(e) {
     e.preventDefault()
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q='+searchInput.value+'&appid='+weatherKey+'')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+    // .catch(err => alert('Wrong'))
+
     geocode(searchInput.value, mapboxToken)
-        .then(function(result) {
-            console.log(result);
+        .then(function (result) {
             map.setCenter(result);
             map.setZoom(9);
         });
@@ -36,8 +42,7 @@ function centerOnLocationName(e) {
 function moveMarkerToSearchResultCenter(e) {
     e.preventDefault()
     geocode(searchInput.value, mapboxToken)
-        .then(function(result) {
-            console.log(result);
+        .then(function (result) {
             map.setCenter(result);
             map.setZoom(9);
             marker.setLngLat(result)
@@ -62,11 +67,14 @@ function reverseGeocode(coordinates, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
     return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
-        .then(function(res) {
+        .then(function (res) {
             return res.json();
         })
         // to get all the data from the request, comment out the following three lines...
-        .then(function(data) {
+        .then(function (data) {
             return data.features[0].place_name;
         });
 }
+
+
+

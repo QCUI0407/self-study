@@ -23,7 +23,7 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand">Weather App</a>
-                <p>Current city:<span id="current-city">xxx</span></p>
+                <p>Current city:<span id="current-city">dallas</span></p>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" id="search-input" type="search" placeholder="Place"
                         aria-label="Search">
@@ -38,49 +38,67 @@
         <div class="col cardpos">
             <div class="card" style="width: 11rem;">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-day">2020/20/20</p>
+                    <p class="card-text temp">50</p>
+                    <p class="card-text desc">cloudy</p>
+                    <p class="card-text humidty">60%</p>
+                    <p class="card-text wind">5.2km/h</p>
+                    <p class="card-text pressure">1012</p>
                 </div>
             </div>
         </div>
         <div class="col cardpos">
             <div class="card" style="width: 11rem;">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-day">2020/20/20</p>
+                    <p class="card-text temp">50</p>
+                    <p class="card-text desc">cloudy</p>
+                    <p class="card-text humidty">60%</p>
+                    <p class="card-text wind">5.2km/h</p>
+                    <p class="card-text pressure">1012</p>
                 </div>
             </div>
         </div>
         <div class="col cardpos">
             <div class="card" style="width: 11rem;">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-day">2020/20/20</p>
+                    <p class="card-text temp">50</p>
+                    <p class="card-text desc">cloudy</p>
+                    <p class="card-text humidty">60%</p>
+                    <p class="card-text wind">5.2km/h</p>
+                    <p class="card-text pressure">1012</p>
                 </div>
             </div>
         </div>
         <div class="col cardpos">
             <div class="card" style="width: 11rem;">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-day">2020/20/20</p>
+                    <p class="card-text temp">50</p>
+                    <p class="card-text desc">cloudy</p>
+                    <p class="card-text humidty">60%</p>
+                    <p class="card-text wind">5.2km/h</p>
+                    <p class="card-text pressure">1012</p>
                 </div>
             </div>
         </div>
         <div class="col cardpos">
             <div class="card" style="width: 11rem;">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-day">2020/20/20</p>
+                    <p class="card-text temp">50</p>
+                    <p class="card-text desc">cloudy</p>
+                    <p class="card-text humidty">60%</p>
+                    <p class="card-text wind">5.2km/h</p>
+                    <p class="card-text pressure">1012</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- map -->
-    <div id="map-div" class="" style="width: 100%; position: fixed; height: 600px">
-        <div class="btn-group-vertical opacity-75"
-            style="z-index: 1; float: right; position: relative; right: 1rem; top: 1rem; height: 20%" role="group"
-            aria-label="Zoom">
+    <div id="map-div">
+        <div id="zoom-div" class="btn-group-vertical opacity-75" role="group" aria-label="Zoom">
             <button id="zoom-in" type="button" class="btn btn-light">+</button>
             <button id="zoom-out" type="button" class="btn btn-light">-</button>
             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuLink"
@@ -110,38 +128,6 @@
             map.setZoom(10);
         });
 
-        var suShiII = {
-            address: "655 Ke’eaumoku St #109, Honolulu, HI 96814",
-            popupHTML: "<p>SuShi II</p>"
-        };
-        var fookYuen = {
-            address: "1960 Kapiolani Blvd, Honolulu, HI 96826",
-            popupHTML: "<p>Fook Yuen Seafood Restaurant</p>"
-        };
-        var SimplySichuan = {
-            address: "100 N Beretania St #107, Honolulu, HI 96817",
-            popupHTML: "<p>Simply Sichuan</p>"
-        };
-
-        let restaurants = [suShiII, fookYuen, SimplySichuan];
-
-        function placeMarkerAndPopup(info, token, map) {
-            geocode(info.address, token).then(function (coordinates) {
-                var popup = new mapboxgl.Popup()
-                    .setHTML(info.popupHTML);
-                var marker = new mapboxgl.Marker()
-                    .setLngLat(coordinates)
-                    .addTo(map)
-                    .setPopup(popup);
-                popup.addTo(map);
-            });
-        }
-        restaurants.forEach(function (restaurant) {
-            placeMarkerAndPopup(restaurant, mapboxToken, map);
-        })
-
-
-
         const zoomIn = document.querySelector("#zoom-in")
         zoomIn.addEventListener("click", event => map.setZoom(map.getZoom() + 1))
 
@@ -157,6 +143,7 @@
         zoomLevel[1].addEventListener("click", event => map.setZoom(11))
         zoomLevel[2].addEventListener("click", event => map.setZoom(6))
 
+        
 
 
     </script>

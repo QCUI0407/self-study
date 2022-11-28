@@ -15,3 +15,7 @@
     display: flex;
     justify-content:center;
 }
+#map-div{
+    height: 800px;
+    padding: auto;
+}

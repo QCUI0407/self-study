@@ -75,35 +75,35 @@
             map.setZoom(10);
         });
 
-        var suShiII = {
-            address: "655 Ke’eaumoku St #109, Honolulu, HI 96814",
-            popupHTML: "<p>SuShi II</p>"
-        };
-        var fookYuen = {
-            address: "1960 Kapiolani Blvd, Honolulu, HI 96826",
-            popupHTML: "<p>Fook Yuen Seafood Restaurant</p>"
-        };
-        var SimplySichuan = {
-            address: "100 N Beretania St #107, Honolulu, HI 96817",
-            popupHTML: "<p>Simply Sichuan</p>"
-        };
+        // var suShiII = {
+        //     address: "655 Ke’eaumoku St #109, Honolulu, HI 96814",
+        //     popupHTML: "<p>SuShi II</p>"
+        // };
+        // var fookYuen = {
+        //     address: "1960 Kapiolani Blvd, Honolulu, HI 96826",
+        //     popupHTML: "<p>Fook Yuen Seafood Restaurant</p>"
+        // };
+        // var SimplySichuan = {
+        //     address: "100 N Beretania St #107, Honolulu, HI 96817",
+        //     popupHTML: "<p>Simply Sichuan</p>"
+        // };
 
-        let restaurants = [suShiII, fookYuen, SimplySichuan];
+        // let restaurants = [suShiII, fookYuen, SimplySichuan];
 
-        function placeMarkerAndPopup(info, token, map) {
-            geocode(info.address, token).then(function (coordinates) {
-                var popup = new mapboxgl.Popup()
-                    .setHTML(info.popupHTML);
-                var marker = new mapboxgl.Marker()
-                    .setLngLat(coordinates)
-                    .addTo(map)
-                    .setPopup(popup);
-                popup.addTo(map);
-            });
-        }
-        restaurants.forEach(function (restaurant) {
-            placeMarkerAndPopup(restaurant, mapboxToken, map);
-        })
+        // function placeMarkerAndPopup(info, token, map) {
+        //     geocode(info.address, token).then(function (coordinates) {
+        //         var popup = new mapboxgl.Popup()
+        //             .setHTML(info.popupHTML);
+        //         var marker = new mapboxgl.Marker()
+        //             .setLngLat(coordinates)
+        //             .addTo(map)
+        //             .setPopup(popup);
+        //         popup.addTo(map);
+        //     });
+        // }
+        // restaurants.forEach(function (restaurant) {
+        //     placeMarkerAndPopup(restaurant, mapboxToken, map);
+        // })
 
 
 
