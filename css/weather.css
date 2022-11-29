@@ -15,7 +15,7 @@ body {
 .container {
     height: 16rem;
     width: 15rem;
-    background-image: linear-gradient(to right top, #a38ee5, #a099e8, #9fa3ea, #a0adea, #a4b6e9, #9fbfef, #9bc8f4, #99d0f7, #85dbff, #70e7ff, #60f1fc, #5ffbf1);
+    background: linear-gradient(to bottom right,rgba(240, 245, 245, 0.678), blue,white,greenyellow,green);
     text-align: center;
     padding-top: 12px;
     border-radius: 16px;
