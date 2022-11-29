@@ -70,7 +70,7 @@ window.addEventListener('load', () => {
                         });
 
                     var cityName = searchInput.value;
-// -----------------------------------search city wearther-----------------
+                    // -----------------------------------search city wearther-----------------
                     let web2 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + OPEN_WEATHER_APPID + "&units=imperial";
                     fetch(web2).then(
                         (response) => {
@@ -92,14 +92,9 @@ window.addEventListener('load', () => {
                                 `<img src=" http://openweathermap.org/img/wn/${iconShow}.png" style= 'height:5rem'/>`;
                             count++;
                         }
-
-                    })
-
-
-
-
-
-                })
+                    });
+                });
+                // -------------------------------------btn search fun done------------------------
             });
         });
     }
