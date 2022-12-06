@@ -43,3 +43,4 @@ console.log(a[1]);
 a = null;//最后，让a指向的对象成为垃圾对象（被回收)
 console.log(a);
 
+//ES6 Promise

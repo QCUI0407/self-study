@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="movie.css">
+</head>
+
+<body>
+  <div id="loader"></div>
+
+  <header>
+    <form id="'form">
+      <input id="input-search" class='search' type="text" placeholder="">
+      <button id="btn-search" class="search" >Search</button>
+    </form>
+  </header>
+
+
+  <!-- movies -->
+  <main id="main"></main>
+
+
+
+
+
+
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="../js/keys.js"></script>
+  <script src="movie.js"></script>
+  <!-- remove loading -->
+  <script>
+    var loader = document.getElementById('loader');
+    window.addEventListener('load', function () {
+      loader.style.display = 'none';
+    })
+  </script>
+
+</body>
+
+</html>
