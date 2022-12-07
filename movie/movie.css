@@ -1,4 +1,4 @@
-#loader{
+/* #loader{
     background: black url(Loading.gif) no-repeat center center ;
     background-size: 40%;
     height: 100vh;
@@ -7,7 +7,7 @@
     z-index: 100;
 }
 
-/* .container{
+.container{
     width: 200px;
     max-width: 100%;
     margin: 0 auto;
